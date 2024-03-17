@@ -1,3 +1,4 @@
+import 'package:appjamteam39/ProfilePage.dart';
 import 'package:flutter/material.dart';
 import 'package:appjamteam39/EntryPage.dart';
 
@@ -11,7 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: EntryPage(),
+      home: ProfilePage(
+          name: "name",
+          surName: "surName",
+          gender: "gender",
+          email: "email",
+          password: "password",),
     );
   }
 }

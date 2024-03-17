@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
     final tabs = [
       const EventWidget(text: "text"),
       const HomeWidget(text: "text"),
-      const ProfileWidget(text: "text"),
+       ProfilePage(name: "text", surName: '', gender: '', password: '', email: '',),
     ];
 
     return Scaffold(

@@ -1,4 +1,4 @@
-import 'package:appjamteam39/Settings.dart';
+import 'package:appjamteam39/SettingsPage.dart';
 import 'package:flutter/material.dart';
 
 import 'EventPage.dart';
@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
     final tabs = [
       const EventWidget(text: "text"),
       const HomeWidget(text: "text"),
-      const ProfileWidget(text: "text"),
+      const ProfilePage(text: "text"),
       // ProfilePage(name: "name", surName: "surName", gender: "gender", email: "email", password: "password"),
     ];
 
@@ -55,7 +55,8 @@ class _HomePageState extends State<HomePage> {
           ),
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
-              bottom: Radius.circular(30), // You can adjust this value to change the shape
+              bottom: Radius.circular(
+                  30), // You can adjust this value to change the shape
             ),
           ),
           centerTitle: false, // Center the title
@@ -79,7 +80,9 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const SettingsWidget(text: "text")),
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          SettingsPage(geliControl: TextEditingController())),
                 );
               },
             ),

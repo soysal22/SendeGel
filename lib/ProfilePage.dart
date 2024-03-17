@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class ProfileWidget extends StatelessWidget {
+class ProfilePage extends StatelessWidget {
   final String text;
 
-  const ProfileWidget({Key? key, required this.text}) : super(key: key);
+  const ProfilePage({Key? key, required this.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,13 +11,15 @@ class ProfileWidget extends StatelessWidget {
     String surName = "Soylular";
     String email = "dsoylular22@ku.edu.tr";
     String password = "123456";
+    
+    String location = "TÜRKİYE";
     String dateOfBirth = "01.07.2003";
 
     return Scaffold(
       appBar: _appBarDesign(context),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(left: 15, top: 30),
+          padding: const EdgeInsets.only(left: 15, top: 30,right: 15),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,6 +48,10 @@ class ProfileWidget extends StatelessWidget {
               NameTextWidget(
                 name: "Password",
                 nameTwo: password,
+              ),
+              NameTextWidget(
+                name: "Location",
+                nameTwo: location,
               ),
               NameTextWidget(
                   name: "Date of Birth",
@@ -94,7 +100,7 @@ class NameTextWidget extends StatelessWidget {
           name,
           style: const TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 20,
+            fontSize: 19,
             decorationStyle: TextDecorationStyle.solid,
           ),
         ),

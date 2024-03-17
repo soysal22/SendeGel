@@ -40,6 +40,7 @@ class _EntryState extends State<EntryPage> {
 
     return Scaffold(
       body: SingleChildScrollView(
+        primary: true,
         child: Column(
           children: [
             Container(

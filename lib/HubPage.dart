@@ -1,12 +1,14 @@
-import 'package:appjamteam39/EventPage.dart';
-import 'package:appjamteam39/HubPageFiles/HomePage.dart';
-import 'package:appjamteam39/ProfilePage.dart';
+import 'package:appjamteam39/Settings.dart';
 import 'package:flutter/material.dart';
+
+import 'EventPage.dart';
+import 'HubPageFiles/HomePage.dart';
+import 'ProfilePage.dart';
 
 class HomePage extends StatefulWidget {
   final String argument;
 
-  const HomePage({super.key, required this.argument});
+  const HomePage({Key? key, required this.argument}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -25,46 +27,65 @@ class _HomePageState extends State<HomePage> {
     ];
 
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: const Align(
-          alignment: Alignment.center,
-          child: Text(
-            'SendeGel',
-            style: TextStyle(
-              fontSize: 24.0,
-              fontWeight: FontWeight.bold,
-              fontStyle: FontStyle.italic,
-              color: Colors.white,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(75.0),
+        child: AppBar(
+          automaticallyImplyLeading: false,
+          title: const Align(
+            alignment: Alignment.center,
+            child: Text(
+              'SendeGel',
+              style: TextStyle(
+                fontSize: 24.0,
+                fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.italic,
+                color: Colors.white,
+              ),
             ),
           ),
-        ),
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-              colors: [Colors.purple, Colors.deepPurple],
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                colors: [Colors.purple, Colors.deepPurple],
+              ),
             ),
           ),
-        ),
-        toolbarHeight: 75,
-        centerTitle: false, // Center the title
-        actions: [
-          IconButton(
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(
+              bottom: Radius.circular(30), // You can adjust this value to change the shape
+            ),
+          ),
+          centerTitle: false, // Center the title
+          leading: IconButton(
             icon: const Icon(
-              Icons.settings,
+              Icons.exit_to_app,
               size: 25, // Adjust the size as needed
               color: Colors.white, // Make the icon white
             ),
             onPressed: () {
-              // TODO: SETTINGS EKRANINA GEÇİŞ BURAYA YAZILACAK
+              Navigator.of(context).pop();
             },
           ),
-        ],
+          actions: [
+            IconButton(
+              icon: const Icon(
+                Icons.settings,
+                size: 25, // Adjust the size as needed
+                color: Colors.white, // Make the icon white
+              ),
+              onPressed: () {
+                // TODO: SETTINGS EKRANINA GEÇİŞ BURAYA YAZILACAK
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SettingsWidget(text: "text")),
+                );
+              },
+            ),
+          ],
+        ),
       ),
-
-
       body: Center(
         // child: Text(widget.argument),
         child: tabs[_currentIndex],

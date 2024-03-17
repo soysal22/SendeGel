@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class NewGeziWidget extends StatelessWidget {
+class GeziWidget extends StatelessWidget {
   final String text;
 
   @override
@@ -8,7 +8,7 @@ class NewGeziWidget extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           color: Colors.white, // Change the color of the back button here
           onPressed: () {
             Navigator.pop(context);
@@ -44,9 +44,175 @@ class NewGeziWidget extends StatelessWidget {
         ),
         centerTitle: true, // Center the title
       ),
+      body: Column(
+        children: [
+          const SizedBox(height: 40),
+          Center(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20), // Adjust the radius to your preference
+              child: Image.asset(
+                'lib/images/img.png',
+                fit: BoxFit.cover,
+                width: 300, // Adjust the width and height of the image container as needed
+                height: 200,
+              ),
+            ),
+          ),
+          const SizedBox(height: 30),
+          Container(
+            width: 200,
+            height: 80,
+            decoration: BoxDecoration(
+              gradient: const LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                colors: [Colors.purple, Colors.deepPurple],
+              ),
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all( // Add border
+                color: Colors.black, // Border color
+                width: 2, // Border width
+              ),
+            ),
+            child: const Center(
+              child: Text(
+                "Kadıköy Gezisi",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
 
+          const SizedBox(height: 25),
+          Container(
+            color: Colors.purple,
+              height: 5,
+              width: double.infinity
+          ),
+          const SizedBox(height: 25),
+          Row(
+            children: [
+              const SizedBox(width: 20),
+              Container(
+                width: 170,
+                height: 60,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.purple, // Set border color to purple
+                  ),
+                  borderRadius: BorderRadius.circular(10), // Set border radius to make it a rounded rectangle
+                ),
+                child: const Center(
+                  child: Text(
+                    "Gezi Organizatörü İsmi",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ),
+
+              const SizedBox(width: 30),
+              const Text("Deniz Soylular"),
+            ],
+          ),
+          const SizedBox(height: 30),
+          Row(
+            children: [
+              const SizedBox(width: 20),
+              Container(
+                width: 170,
+                height: 60,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.purple, // Set border color to purple
+                  ),
+                  borderRadius: BorderRadius.circular(10), // Set border radius to make it a rounded rectangle
+                ),
+                child: const Center(
+                  child: Text(
+                    "Gezilecek Yer",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ),
+
+              const SizedBox(width: 30),
+              const Text("Kadıköy"),
+            ],
+          ),
+          const SizedBox(height: 30),
+          Row(
+            children: [
+              const SizedBox(width: 20),
+              Container(
+                width: 170,
+                height: 60,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.purple, // Set border color to purple
+                  ),
+                  borderRadius: BorderRadius.circular(10), // Set border radius to make it a rounded rectangle
+                ),
+                child: const Center(
+                  child: Text(
+                    "Katılımcı sayısı",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ),
+
+              const SizedBox(width: 30),
+              const Text("19"),
+            ],
+          ),
+          const SizedBox(height: 30),
+          Container(
+            width: 50, // Adjust width as needed
+            height: 50, // Adjust height as needed
+            decoration: BoxDecoration(
+              shape: BoxShape.circle, // Makes the container circular
+              gradient: const LinearGradient(
+                colors: [Colors.deepPurple, Colors.purpleAccent],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+              border: Border.all(color: Colors.black, width: 2), // Border color and width
+            ),
+            child: ElevatedButton(
+              onPressed: () {
+
+              },
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.zero, // Remove padding
+                shape: const CircleBorder(), // Makes the button circular
+                backgroundColor: Colors.transparent, // Transparent background
+                foregroundColor: Colors.white, // Text color
+              ),
+              child: const Icon(Icons.chat),
+            ),
+          ),
+        ],
+      ),
     );
   }
 
-  const NewGeziWidget({super.key, required this.text});
+  const GeziWidget({super.key, required this.text});
 }

@@ -13,11 +13,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: ProfilePage(
-          name: "name",
-          surName: "surName",
-          gender: "gender",
-          email: "email",
-          password: "password",),
+        name: "name",
+        surName: "surName",
+        gender: "gender",
+        email: "email",
+        password: "password",
+      ),
     );
   }
 }
